@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/color_selector/static/css/main.ffd04229.css",
+    "main.js": "/color_selector/static/js/main.467d7607.js",
+    "static/js/453.2c5084af.chunk.js": "/color_selector/static/js/453.2c5084af.chunk.js",
+    "static/media/inside-covering-green-walls.png": "/color_selector/static/media/inside-covering-green-walls.cbe5b6022a4db77302dc.png",
+    "static/media/inside.jpeg": "/color_selector/static/media/inside.bb547ec3eedff5dd7822.jpeg",
+    "static/media/inside-covering-green-floor.png": "/color_selector/static/media/inside-covering-green-floor.57ee044809c74f5027cd.png",
+    "static/media/inside-covering-green-facing.png": "/color_selector/static/media/inside-covering-green-facing.d5e95ea51f7017576874.png",
+    "index.html": "/color_selector/index.html",
+    "main.ffd04229.css.map": "/color_selector/static/css/main.ffd04229.css.map",
+    "main.467d7607.js.map": "/color_selector/static/js/main.467d7607.js.map",
+    "453.2c5084af.chunk.js.map": "/color_selector/static/js/453.2c5084af.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ffd04229.css",
+    "static/js/main.467d7607.js"
+  ]
+}
