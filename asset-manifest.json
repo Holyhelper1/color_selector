@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/color_selector/static/css/main.f77a71b2.css",
+    "main.css": "/color_selector/static/css/main.8557c872.css",
     "main.js": "/color_selector/static/js/main.ffb23f19.js",
     "static/js/453.2c5084af.chunk.js": "/color_selector/static/js/453.2c5084af.chunk.js",
     "static/media/inside-covering-green-walls.png": "/color_selector/static/media/inside-covering-green-walls.cbe5b6022a4db77302dc.png",
@@ -8,12 +8,12 @@
     "static/media/inside-covering-green-floor.png": "/color_selector/static/media/inside-covering-green-floor.57ee044809c74f5027cd.png",
     "static/media/inside-covering-green-facing.png": "/color_selector/static/media/inside-covering-green-facing.d5e95ea51f7017576874.png",
     "index.html": "/color_selector/index.html",
-    "main.f77a71b2.css.map": "/color_selector/static/css/main.f77a71b2.css.map",
+    "main.8557c872.css.map": "/color_selector/static/css/main.8557c872.css.map",
     "main.ffb23f19.js.map": "/color_selector/static/js/main.ffb23f19.js.map",
     "453.2c5084af.chunk.js.map": "/color_selector/static/js/453.2c5084af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f77a71b2.css",
+    "static/css/main.8557c872.css",
     "static/js/main.ffb23f19.js"
   ]
 }
