@@ -19,14 +19,33 @@
   }
 }
 
+.mainLayers_button_clear {
+  border: none;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #6dbd8b;
+  color: white;
+  font-family: "Cera Pro", sans-serif;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgb(22, 90, 48);
+    color: white;
+  }
+}
+
 .mainLayers_block {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1000px;
+  width: 100%; // Лучше использовать относительные единицы
 
-  /* Можно добавить общий медиазапрос */
   @media (max-width: 1550px) {
     width: 100%;
   }
@@ -38,14 +57,11 @@
 }
 
 .mainLayers_container {
-  justify-content: center;
-  align-items: center;
   position: relative;
   padding: 20px;
   width: 95%;
   min-width: 350px;
   max-width: 974px;
-  height: auto;
   aspect-ratio: 974 / 670;
   box-sizing: border-box;
   border-radius: 10px;
@@ -60,45 +76,27 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
-  }
-
-  .mainLayers_inside {
-    z-index: 1;
-    border-radius: 10px;
     color: transparent;
-  }
+    z-index: 1; 
 
-  .mainLayers_facing {
-    z-index: 2;
-    color: transparent;
-    border-radius: 10px;
-    filter: hue-rotate(92.013deg) saturate(0.197148) brightness(1.02105);
-  }
+    // &.mainLayers_facing {
+    //   z-index: 2; 
+    // }
 
-  .mainLayers_walls {
-    border-radius: 10px;
-    z-index: 3;
-    color: transparent;
-    filter: hue-rotate(360deg) saturate(0.0081) brightness(1.0838);
+    // &.mainLayers_walls {
+    //   z-index: 3;
+    // }
 
-    
-      // filter:  hue-rotate(139deg) saturate(0%) brightness(253%);
-    
-    // filter: hue-rotate(-40.211deg) saturate(0.714883) brightness(0.495238);
-  }
-
-  .mainLayers_floor {
-    border-radius: 10px;
-    z-index: 4;
-    color: transparent;
-    filter: hue-rotate(-104.211deg) saturate(1.01503) brightness(0.2714);
+    // &.mainLayers_floor {
+    //   z-index: 4;
+    // }
   }
 
   @keyframes pulse {
     0%,
     100% {
       opacity: 1;
-      filter:  hue-rotate(139deg) saturate(0%) brightness(253%);
+      filter: hue-rotate(139deg) saturate(0%) brightness(253%);
     }
     50% {
       opacity: 0.5;
@@ -106,7 +104,12 @@
   }
 
   .animate_pulse {
+    z-index: 3; // Выше остальных, когда активен
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .new_color {
+    z-index: 3;
   }
 
   img {
@@ -152,7 +155,6 @@
 
   .mainLayers_container {
     width: 90%;
-    height: auto;
   }
 }
 
@@ -174,9 +176,10 @@
     width: 100%;
     margin: 20px;
     padding: 0;
-    margin: 0;
   }
 }
+
+
 
 // .mainLayers_wrapper {
 //   display: flex;
@@ -205,6 +208,11 @@
 //   justify-content: center;
 //   align-items: center;
 //   width: 1000px;
+
+//   /* Можно добавить общий медиазапрос */
+//   @media (max-width: 1550px) {
+//     width: 100%;
+//   }
 // }
 
 // .green_text {
@@ -239,24 +247,47 @@
 
 //   .mainLayers_inside {
 //     z-index: 1;
+//     border-radius: 10px;
+//     color: transparent;
 //   }
 
 //   .mainLayers_facing {
-//     z-index: 2;
+//     // z-index: 2;
 //     color: transparent;
-//     filter: hue-rotate(-31.0323deg) saturate(0.197148) brightness(1.02105);
+//     border-radius: 10px;
+//     // filter: hue-rotate(92.013deg) saturate(0.197148) brightness(1.02105);
 //   }
 
 //   .mainLayers_walls {
-//     z-index: 3;
+//     border-radius: 10px;
+//     // z-index: 3;
 //     color: transparent;
-//     filter: hue-rotate(-154.211deg) saturate(0.714883) brightness(0.495238);
+//     // filter: hue-rotate(360deg) saturate(0.0081) brightness(1.0838);
+
+  
 //   }
 
 //   .mainLayers_floor {
-//     z-index: 4;
+//     border-radius: 10px;
+//     // z-index: 4;
 //     color: transparent;
-//     filter: hue-rotate(-977.5deg) saturate(1.01803) brightness(0.585714);
+//     // filter: hue-rotate(-89deg) saturate(0.791) brightness(0.778);
+//   }
+
+//   @keyframes pulse {
+//     0%,
+//     100% {
+//       opacity: 1;
+//       filter:  hue-rotate(139deg) saturate(0%) brightness(253%);
+//     }
+//     50% {
+//       opacity: 0.5;
+//     }
+//   }
+
+//   .animate_pulse {
+//     z-index: 2;
+//     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 //   }
 
 //   img {
@@ -297,39 +328,21 @@
 
 // @media (max-width: 1550px) {
 //   .mainLayers_wrapper {
-//     display: flex;
 //     flex-direction: column;
-//   }
-
-//   .mainLayers_block {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
 //   }
 
 //   .mainLayers_container {
 //     width: 90%;
 //     height: auto;
 //   }
-
-//   img {
-//     width: 100%;
-//     height: auto;
-//   }
-
-//   .mainLayers_block {
-//     width: 100%;
-//   }
 // }
 
 // @media (max-width: 500px) {
 //   .mainLayers_wrapper {
-//     display: flex;
 //     flex-direction: column;
 //     align-items: center;
-//     padding: 20px;
-//     margin: 10px;
+//     padding: 0;
+//     margin: 0;
 //   }
 
 //   .mainLayers_button_calculate {
@@ -341,5 +354,7 @@
 //   .mainLayers_button_block {
 //     width: 100%;
 //     margin: 20px;
+//     padding: 0;
+//     margin: 0;
 //   }
 // }

@@ -1,22 +1,24 @@
 import { useState } from "react";
-import { colors } from "../../../Utils/colors";
+// import { colors } from "../../../Utils/colors";
 import styles from "./color-buttons.module.scss";
-import { hexToFilter } from "../../../Utils/color-converter";
 import { colorsExtra } from "../../../Utils/colorsExtra";
 
-export const ColorButtons = () => {
+interface ColorButtonsProps {
+  onColorClick: (colorType: string) => void
+}
+
+export const ColorButtons = ({onColorClick}: ColorButtonsProps) => {
 const [chosenColor, setChosenColor] = useState('');
 
+const handleColorClick = (colorParam: string) => {
+  setChosenColor(colorParam)
+  onColorClick(colorParam)
+}
 
-
-console.log(hexToFilter(chosenColor));
-
-
-    console.log(chosenColor);
   return (
     <>
     
-    <div className={styles.colorButtons_container}>
+    {/* <div className={styles.colorButtons_container}>
       {colors.map((color) => (
         <button 
         onClick={() => setChosenColor(color.hex)}
@@ -26,15 +28,16 @@ console.log(hexToFilter(chosenColor));
         {color.colorNum}
       </button>
       ))}
-  </div>
+  </div> */}
   <div>Дополнительные цвета</div>
 <div className={styles.colorButtons_container}>
 
       {colorsExtra.map((color2) => (
         <button 
-        onClick={() => setChosenColor(color2.hex)}
+        onClick={() => handleColorClick(color2.hsl)}
         key={color2.id}
-        style={{ backgroundColor: color2.hex }}
+        style={{ backgroundColor: color2.hsl }} 
+
       >
         {color2.colorNum}
       </button>

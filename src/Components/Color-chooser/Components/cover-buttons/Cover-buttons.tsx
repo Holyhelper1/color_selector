@@ -13,6 +13,9 @@ export const CoverButtons = ({ onButtonClick }: CoverButtonsProps) => {
     onButtonClick(buttonType);
   };
 
+  console.log('activeButton?', activeButton);
+  
+
   return (
     <div className={styles.coverButtons_container}>
       <button
