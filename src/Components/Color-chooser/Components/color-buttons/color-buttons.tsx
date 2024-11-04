@@ -4,16 +4,19 @@ import styles from "./color-buttons.module.scss";
 import { colorsExtra } from "../../../Utils/colorsExtra";
 
 interface ColorButtonsProps {
-  onColorClick: (colorType: string) => void
+  onColorClick: (colorType: string, colorNum: string) => void
 }
 
 export const ColorButtons = ({onColorClick}: ColorButtonsProps) => {
 const [chosenColor, setChosenColor] = useState('');
+const [activeColorNum, setActiveColorNum] = useState('');
 
-const handleColorClick = (colorParam: string) => {
+const handleColorClick = (colorParam: string, colorNum: string) => {
   setChosenColor(colorParam)
-  onColorClick(colorParam)
+  onColorClick(colorParam, colorNum)
+  setActiveColorNum(colorNum)
 }
+
 
   return (
     <>
@@ -34,7 +37,7 @@ const handleColorClick = (colorParam: string) => {
 
       {colorsExtra.map((color2) => (
         <button 
-        onClick={() => handleColorClick(color2.hsl)}
+        onClick={() => handleColorClick(color2.hsl, color2.colorNum)}
         key={color2.id}
         style={{ backgroundColor: color2.hsl }} 
 

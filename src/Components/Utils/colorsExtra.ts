@@ -1,17 +1,22 @@
 interface Color {
     id: number;
-    hex: string;
+    // hex: string; // убрал из нужных цветов
     colorNum: string;
     hsl: string;
 }
 
 export const colorsExtra: Color[] = [
-    { id: 4306, hex: "#FF5733", colorNum: "4306", hsl: "hsl(31, 53%, 42%)" },
-    { id: 4303, hex: "#33FF57", colorNum: "4303", hsl: "hsl(47, 59%, 38%)" },
-    { id: 4003, hex: "#3357FF", colorNum: "4003", hsl: "hsl(29, 85%, 74%)" },
-    { id: 4002, hex: "#FF33A1", colorNum: "4002", hsl: "hsl(72, 55%, 76%)" },
-    { id: 4001, hex: "#FFDE33", colorNum: "4001", hsl: "hsl(47, 51%, 68%)" },
-    { id: 2596, hex: "#e1d28f", colorNum: "2596", hsl: "hsl(49, 58%, 72%)" },
+    { id: 4306, colorNum: "4306", hsl: "hsl(31, 53%, 42%)" },
+    { id: 4303, colorNum: "4303", hsl: "hsl(47, 59%, 38%)" },
+    { id: 4003, colorNum: "4003", hsl: "hsl(29, 85%, 74%)" },
+    { id: 4002, colorNum: "4002", hsl: "hsl(72, 55%, 76%)" },
+    { id: 4001, colorNum: "4001", hsl: "hsl(47, 51%, 68%)" },
+    { id: 2596, colorNum: "2596", hsl: "hsl(49, 58%, 72%)" },
+    { id: 1423, colorNum: "T1423", hsl: "hsl(173, 45%, 46%)"},
+    { id: 1412, colorNum: "T1412", hsl: "hsl(109, 13%, 59%)"},
+    { id: 3021, colorNum: "T3021", hsl: "hsl(30, 69%, 84%)"},
+    { id: 5331, colorNum: "5331", hsl: "hsl(322, 25%, 26%)"},
+    { id: 6576, colorNum: "6576", hsl: "hsl(227, 35%, 55%)"},
     // { id: 3007, hex: "#9033FF", colorNum: "T3007" },
     // { id: 3008, hex: "#FF5733", colorNum: "T3008" },
     // { id: 3009, hex: "#FF8C00", colorNum: "T3009" },

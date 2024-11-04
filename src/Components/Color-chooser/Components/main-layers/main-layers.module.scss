@@ -80,22 +80,23 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    // height: 100%;
+    border-radius: 20px;
     color: transparent;
-    z-index: 1; 
+    z-index: 1;  // исправить на 1
 
-    // &.mainLayers_facing {
-    //   z-index: 2; 
-    // }
+    &.mainLayers_facing {
+      color: transparent;
+    }
 
-    // &.mainLayers_walls {
-    //   z-index: 3;
-    // }
+    &.mainLayers_walls {
+      color: transparent;
+     
+    }
 
-    // &.mainLayers_floor {
-    //   z-index: 4;
-    // }
+    &.mainLayers_floor {
+      color: transparent;
+    }
   }
 
   @keyframes pulse {
@@ -121,7 +122,7 @@
   img {
     object-fit: contain;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     border-radius: 10px;
   }
 }
@@ -153,11 +154,11 @@
   text-align: center;
   margin: 20px 0;
 
-  // p {
-  //   margin: 0;
-  //   padding: 0;
+  p {
+    margin: 20px 0;
+    padding: 10px 0;
 
-  // }
+  }
 }
 
 @media (max-width: 1550px) {
