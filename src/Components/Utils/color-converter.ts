@@ -1,3 +1,44 @@
+// самый стабильный вариант 1.1 новая версия
+type HSL = { h: number; s: number; l: number };
+
+
+export function parseHsl(hslString: string): HSL {
+    const hslRegex = /hsl\((\d+),\s*(\d+)%?,\s*(\d+)%?\)/;
+    const match = hslString.match(hslRegex);
+    
+    if (!match) {
+        throw new Error("Invalid HSL format");
+    }
+
+    const [_, h, s, l] = match;
+    return {
+        h: parseInt(h, 10),
+        s: parseInt(s, 10),
+        l: parseInt(l, 10),
+    };
+}
+
+/**
+ * @param newColorString 
+ * @returns 
+*/
+export function calculateHslDifference(newColorString: string): string {
+    const baseColor: HSL = { h: 120, s: 67, l: 54 };
+    const newColor = parseHsl(newColorString);
+    
+    // Корректировка hue, saturation и lightness
+    const hueDifference = (newColor.h - baseColor.h * 1.02).toFixed(5);
+    const saturationDifference = (newColor.s / baseColor.s * 0.29).toFixed(7); // С X1 корректировкой нормальное значение * 0.29)
+    const brightnessDifference = ((newColor.l / baseColor.l) * 0.85).toFixed(6); // С X1 корректировкой нормальное значение * 0.85)
+    
+    const hueRotate = `hue-rotate(${hueDifference}deg)`;
+    const saturate = `saturate(${saturationDifference})`;
+    const brightness = `brightness(${brightnessDifference})`;
+    
+    return `${hueRotate} ${saturate} ${brightness}`;
+}
+
+
 // // самый стабильный вариант 1.0
 // export function calculateColorChange(targetHSL: string) {
 //   const originalColor = "hsl(120, 67%, 54%)";// работает с этим обычно
@@ -33,49 +74,3 @@
 //   }deg) saturate(${finalSaturation}%) brightness(${finalLightness}%)`;
 // }
  
-
-
-// самый стабильный вариант 1.1 новая версия
-type HSL = { h: number; s: number; l: number };
-
-/**
- * Функция для преобразования строки HSL в объект HSL
- * @param hslString HSL строка, например, "hsl(29, 69%, 84%)"
- * @returns объект HSL
- */
-export function parseHsl(hslString: string): HSL {
-    const hslRegex = /hsl\((\d+),\s*(\d+)%?,\s*(\d+)%?\)/;
-    const match = hslString.match(hslRegex);
-
-    if (!match) {
-        throw new Error("Invalid HSL format");
-    }
-
-    const [_, h, s, l] = match;
-    return {
-        h: parseInt(h, 10),
-        s: parseInt(s, 10),
-        l: parseInt(l, 10),
-    };
-}
-
-/**
- * @param newColorString 
- * @returns 
- */
-export function calculateHslDifference(newColorString: string): string {
-  const baseColor: HSL = { h: 120, s: 67, l: 54 };
-  const newColor = parseHsl(newColorString);
-
-  // Корректировка hue, saturation и lightness
-  const hueDifference = (newColor.h - baseColor.h * 1.02).toFixed(5);
-  const saturationDifference = (newColor.s / baseColor.s * 0.29).toFixed(7); // С корректировкой
-  const brightnessDifference = ((newColor.l / baseColor.l) * 0.85).toFixed(6); // С корректировкой
-
-  const hueRotate = `hue-rotate(${hueDifference}deg)`;
-  const saturate = `saturate(${saturationDifference})`;
-  const brightness = `brightness(${brightnessDifference})`;
-
-  return `${hueRotate} ${saturate} ${brightness}`;
-}
-
