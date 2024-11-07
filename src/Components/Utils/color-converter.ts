@@ -22,7 +22,9 @@ export function parseHsl(hslString: string): HSL {
  * @param newColorString 
  * @returns 
 */
-export function calculateHslDifference(newColorString: string): string {
+
+// попробовать добавить значение х2 для кнопки окраска в 2 слоя
+export function calculateHslDifference(newColorString: string): string { 
     const baseColor: HSL = { h: 120, s: 67, l: 54 };
     const newColor = parseHsl(newColorString);
     
