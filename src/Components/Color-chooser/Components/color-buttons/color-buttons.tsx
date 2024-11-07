@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { colors } from "../../../Utils/colors";
+import { colors } from "../../../Utils/colors";
 import styles from "./color-buttons.module.scss";
 import { colorsExtra } from "../../../Utils/colorsExtra";
 
@@ -21,17 +21,17 @@ const handleColorClick = (colorParam: string, colorNum: string) => {
   return (
     <>
     
-    {/* <div className={styles.colorButtons_container}>
-      {colors.map((color) => (
+    <div className={styles.colorButtons_container}>
+      {colors.map((color: any) => (
         <button 
-        onClick={() => setChosenColor(color.hex)}
+        onClick={() => handleColorClick(color.hsl, color.colorNum)}
         key={color.id}
-        style={{ backgroundColor: color.hex }}
+        style={{ backgroundColor: color.hsl }}
       >
         {color.colorNum}
       </button>
       ))}
-  </div> */}
+  </div>
   <div>Дополнительные цвета</div>
 <div className={styles.colorButtons_container}>
 
