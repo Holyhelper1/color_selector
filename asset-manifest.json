@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/color_selector/static/css/main.13a27fa6.css",
-    "main.js": "/color_selector/static/js/main.cca80b11.js",
+    "main.js": "/color_selector/static/js/main.399a761a.js",
     "static/js/453.2c5084af.chunk.js": "/color_selector/static/js/453.2c5084af.chunk.js",
     "static/media/House-main-layer.jpg": "/color_selector/static/media/House-main-layer.f95268c19d19e8d26653.jpg",
     "static/media/outside-walls-green.png": "/color_selector/static/media/outside-walls-green.26e216b42aa618108569.png",
-    "static/media/balcony-green.png": "/color_selector/static/media/balcony-green.d328f298265f47b08b66.png",
+    "static/media/balcony-green.png": "/color_selector/static/media/balcony-green.7552e97f5dbed15e7339.png",
     "static/media/Roof-green.png": "/color_selector/static/media/Roof-green.585eca91dc46f5232756.png",
-    "static/media/Roof-lining-green.png": "/color_selector/static/media/Roof-lining-green.0f31dc2e12058383a61c.png",
+    "static/media/Roof-lining-green.png": "/color_selector/static/media/Roof-lining-green.dd00e63b131febe4e970.png",
     "static/media/inside-covering-green-walls.png": "/color_selector/static/media/inside-covering-green-walls.cbe5b6022a4db77302dc.png",
     "static/media/inside.jpeg": "/color_selector/static/media/inside.bb547ec3eedff5dd7822.jpeg",
     "static/media/inside-covering-green-floor.png": "/color_selector/static/media/inside-covering-green-floor.57ee044809c74f5027cd.png",
     "static/media/inside-covering-green-facing.png": "/color_selector/static/media/inside-covering-green-facing.d5e95ea51f7017576874.png",
     "index.html": "/color_selector/index.html",
     "main.13a27fa6.css.map": "/color_selector/static/css/main.13a27fa6.css.map",
-    "main.cca80b11.js.map": "/color_selector/static/js/main.cca80b11.js.map",
+    "main.399a761a.js.map": "/color_selector/static/js/main.399a761a.js.map",
     "453.2c5084af.chunk.js.map": "/color_selector/static/js/453.2c5084af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.13a27fa6.css",
-    "static/js/main.cca80b11.js"
+    "static/js/main.399a761a.js"
   ]
 }
