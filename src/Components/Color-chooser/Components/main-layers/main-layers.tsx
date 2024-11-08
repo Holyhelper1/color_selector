@@ -31,6 +31,7 @@ export const MainLayers = ({
     outside_walls: "none",
     roof: "none",
     roof_lining: "none",
+    ceiling: "none",
   });
 
   const prevActiveLayerRef = useRef<string>(activeLayer);
@@ -80,6 +81,7 @@ export const MainLayers = ({
       outside_walls: "none",
       roof: "none",
       roof_lining: "none",
+      ceiling: "none",
     });
   };
 

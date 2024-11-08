@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import inside from "./Components/Color-chooser/Components/Assets/inside/inside.jpeg";
-import facing from "./Components/Color-chooser/Components/Assets/inside/inside-covering-green-facing.png";
-import walls from "./Components/Color-chooser/Components/Assets/inside/inside-covering-green-walls.png";
-import floor from "./Components/Color-chooser/Components/Assets/inside/inside-covering-green-floor.png";
+import inside from "./Components/Color-chooser/Components/Assets/inside2/inside.jpg";
+// import facing from "./Components/Color-chooser/Components/Assets/inside/inside-covering-green-facing.png";
+import walls from "./Components/Color-chooser/Components/Assets/inside2/inside-covering-green-walls.png";
+import floor from "./Components/Color-chooser/Components/Assets/inside2/inside-covering-green-floor.png";
+import ceiling from "./Components/Color-chooser/Components/Assets/inside2/inside-covering-green-ceiling.png";
 import { MainLayers } from "./Components/Color-chooser/Components/main-layers/main-layers";
 import outside from "../src/Components/Color-chooser/Components/Assets/outside/House-main-layer.jpg";
 import balcony from "../src/Components/Color-chooser/Components/Assets/outside/balcony-green.png";
@@ -14,9 +15,10 @@ import { CountingCall } from "./Components/Color-chooser/Components/Counting-cal
 
 const interiorLayers = [
   { name: "inside", buttonName: "", image: inside },
-  { name: "facing", buttonName: "Наличники", image: facing },
+  // { name: "facing", buttonName: "Наличники", image: facing },
   { name: "walls", buttonName: "Стены", image: walls },
   { name: "floor", buttonName: "Пол", image: floor },
+  { name: "ceiling", buttonName: "Потолок", image: ceiling },
 ];
 
 const exteriorLayers = [
