@@ -12,8 +12,6 @@
     "@types/node": "^16.18.115",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "chroma-js": "^3.1.2",
-    "colord": "^2.9.3",
     "colors": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

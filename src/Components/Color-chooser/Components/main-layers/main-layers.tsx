@@ -1,4 +1,3 @@
-//  тест версия для универсального компонента, по цветам стало лучше, проверить обновление данных в кнопках цвета и номера цвета, анимация моргания исправлена
 import styles from "./main-layers.module.scss";
 import { CoverButtons } from "../cover-buttons/Cover-buttons";
 import { ColorButtons } from "../color-buttons/color-buttons";
@@ -23,6 +22,7 @@ export const MainLayers = ({
   const [currentColor, setCurrentColor] = useState<string>("none");
   const [currentColorNum, setCurrentColorNum] = useState<string>("none");
   const [animatePulse, setAnimatePulse] = useState<boolean>(false);
+  const [doublePaint, setDoublePaint] = useState<boolean>(false);
   const [stylesState, setStylesState] = useState<{ [key: string]: string }>({
     walls: "none",
     floor: "none",
@@ -31,13 +31,16 @@ export const MainLayers = ({
     outside_walls: "none",
     roof: "none",
     roof_lining: "none",
-
   });
 
   const prevActiveLayerRef = useRef<string>(activeLayer);
 
   const handlerLayerChange = (layer: string) => {
     setActiveLayer(layer);
+  };
+
+  const handlerDoublePaint = () => {
+    setDoublePaint(!doublePaint);
   };
 
   const handColorChange = (color: string, colorNum: string) => {
@@ -47,7 +50,7 @@ export const MainLayers = ({
   };
 
   useEffect(() => {
-    const newColor = calculateHslDifference(activeColor);
+    const newColor = calculateHslDifference(activeColor, doublePaint);
 
     if (activeColor !== "hsl(0, 0%, 74%)") {
       setStylesState((prev) => ({
@@ -64,14 +67,21 @@ export const MainLayers = ({
     }
 
     prevActiveLayerRef.current = activeLayer;
-  }, [activeColor, activeLayer]);
+  }, [activeColor, activeLayer, doublePaint]);
 
   const clearButtons = () => {
     setActiveLayer("");
     setActiveColor("hsl(0, 0%, 74%)");
-    setStylesState({ walls: "none", floor: "none", facing: "none", balcony: "none", outside_walls: "none", roof: "none", roof_lining: "none" });
+    setStylesState({
+      walls: "none",
+      floor: "none",
+      facing: "none",
+      balcony: "none",
+      outside_walls: "none",
+      roof: "none",
+      roof_lining: "none",
+    });
   };
-
 
   return (
     <div className={styles.mainLayers_wrapper}>
@@ -82,11 +92,15 @@ export const MainLayers = ({
             <span className={styles.green_text}>Шаг 1</span> Выберите объект для
             покраски
           </p>
+          <p className={styles.double_paint}>
+            Для покраски в 2 слоя нажмите на кнопку "&times;2" и выберите цвет
+          </p>
           <CoverButtons
             onButtonClick={handlerLayerChange}
             currentColor={currentColor}
             currentColorNum={currentColorNum}
             layers={layers}
+            onDoublePaintClick={handlerDoublePaint}
           />
           <button
             onClick={clearButtons}
@@ -115,7 +129,8 @@ export const MainLayers = ({
                 alt={name}
                 style={{
                   zIndex: stylesState[name] !== "none" ? 3 : 1,
-                  filter: stylesState[name] !== "none" ? stylesState[name] : "none",
+                  filter:
+                    stylesState[name] !== "none" ? stylesState[name] : "none",
                   transition: !animatePulse ? "all 0.5s ease-in-out" : "none",
                 }}
               />
@@ -133,151 +148,3 @@ export const MainLayers = ({
     </div>
   );
 };
-
-// //  тест версия, по цветам стало лучше, проверить обновление данных в кнопках цвета и номера цвета, анимация моргания исправлена
-// import styles from "./main-layers.module.scss";
-// import inside from "../Assets/inside/inside.jpeg";
-// import facing from "../Assets/inside/inside-covering-green-facing.png";
-// import walls from "../Assets/inside/inside-covering-green-walls.png";
-// import floor from "../Assets/inside/inside-covering-green-floor.png";
-// import { CoverButtons } from "../cover-buttons/Cover-buttons";
-// import { ColorButtons } from "../color-buttons/color-buttons";
-// import { useEffect, useRef, useState } from "react";
-// import { calculateHslDifference } from "../../../Utils/color-converter";
-
-// export const MainLayers = () => {
-//   const [activeLayer, setActiveLayer] = useState("");
-//   const [activeColor, setActiveColor] = useState("hsl(0, 0%, 74%)");
-//   const [currentColor, setCurrentColor] = useState("none");
-//   const [currentColorNum, setCurrentColorNum] = useState("none");
-//   const [animatePulse, setAnimatePulse] = useState(false);
-
-//   const [facingStyle, setFacingStyle] = useState("none");
-//   const [wallsStyle, setWallsStyle] = useState("none");
-//   const [floorStyle, setFloorStyle] = useState("none");
-
-//   const prevActiveLayerRef = useRef(activeLayer);
-
-//   const handlerLayerChange = (layer: string) => {
-//     setActiveLayer(layer);
-//   };
-
-//   const handColorChange = (color: string, colorNum: string) => {
-//     setActiveColor(color);
-//     setCurrentColor(color);
-//     setCurrentColorNum(colorNum);
-//   };
-
-//   useEffect(() => {
-//     const newColor = calculateHslDifference(activeColor);
-
-//     if (activeColor !== "hsl(0, 0%, 74%)") {
-//       if (activeLayer === "facing") {
-//         setFacingStyle(newColor);
-//       } else if (activeLayer === "walls") {
-//         setWallsStyle(newColor);
-//       } else if (activeLayer === "floor") {
-//         setFloorStyle(newColor);
-//       }
-//       setActiveColor("hsl(0, 0%, 74%)");
-//     }
-
-//     if (prevActiveLayerRef.current !== activeLayer) {
-//       setAnimatePulse(true);
-//     } else {
-//       setAnimatePulse(false);
-//     }
-
-//     prevActiveLayerRef.current = activeLayer;
-//   }, [activeColor, activeLayer]);
-
-//   const clearButtons = () => {
-//     setActiveLayer("");
-//     setActiveColor("hsl(0, 0%, 74%)");
-//     setFacingStyle("none");
-//     setWallsStyle("none");
-//     setFloorStyle("none");
-//   };
-
-//   return (
-//     <div className={styles.mainLayers_wrapper}>
-//       <div className={styles.mainLayers_block}>
-//         <div className={styles.mainLayers_text}>
-//           <h2>- Внутренние работы</h2>
-//           <p>
-//             <span className={styles.green_text}>Шаг 1</span> Выберите объект для
-//             покраски
-//           </p>
-//           <CoverButtons
-//             onButtonClick={handlerLayerChange}
-//             currentColor={currentColor}
-//             currentColorNum={currentColorNum}
-//           />
-//           <button
-//             onClick={() => clearButtons()}
-//             className={styles.mainLayers_button_clear}
-//           >
-//             Очистить цвета
-//           </button>
-//         </div>
-
-//         <div className={styles.mainLayers_container}>
-//           <img
-//             className={styles.mainLayers_inside}
-//             src={inside}
-//             alt="main-inside"
-//           />
-//           <img
-//             className={`${styles.mainLayers_facing} ${
-//               activeLayer === "facing" && animatePulse
-//                 ? styles.animate_pulse
-//                 : ""
-//             }`}
-//             src={facing}
-//             alt="main-facing"
-//             style={{
-//               zIndex: facingStyle !== "none" ? 2 : 0,
-//               filter: facingStyle !== "none" ? facingStyle : "none",
-//               transition: !animatePulse ? "all 0.5s ease-in-out" : "none",
-//             }}
-//           />
-//           <img
-//             className={`${styles.mainLayers_walls} ${
-//               activeLayer === "walls" && animatePulse
-//                 ? styles.animate_pulse
-//                 : styles.new_color
-//             }`}
-//             src={walls}
-//             alt="main-walls"
-//             style={{
-//               zIndex: wallsStyle !== "none" ? 2 : 0,
-//               filter: wallsStyle !== "none" ? wallsStyle : "none",
-//               transition: !animatePulse ? "all 0.5s ease-in-out" : "none",
-//             }}
-//           />
-//           <img
-//             className={`${styles.mainLayers_floor} ${
-//               activeLayer === "floor" && animatePulse
-//                 ? styles.animate_pulse
-//                 : ""
-//             }`}
-//             src={floor}
-//             alt="main-floor"
-//             style={{
-//               zIndex: floorStyle !== "none" ? 2 : 0,
-//               filter: floorStyle !== "none" ? floorStyle : "none",
-//               transition: !animatePulse ? "all 0.5s ease-in-out" : "none",
-//             }}
-//           />
-//         </div>
-//       </div>
-//       <div className={styles.mainLayers_button_block}>
-//         <h2>
-//           <span className={styles.green_text}>Шаг 2 </span>Выберите тип и цвет
-//           краски
-//         </h2>
-//         <ColorButtons onColorClick={handColorChange} />
-//       </div>
-//     </div>
-//   );
-// };

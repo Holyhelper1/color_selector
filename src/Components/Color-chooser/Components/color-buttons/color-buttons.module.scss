@@ -8,13 +8,29 @@
   height: 320px;
   padding: 10px;
   margin-bottom: 20px;
-  // margin: 40px;
   overflow-y: scroll;
 
-  button {
-    border: 3px solid transparent; 
+  &::-webkit-scrollbar {
+    width: 8px; 
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgb(28, 28, 28); 
     border-radius: 10px;
-    // padding: 3px; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #6dbd8b;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #138a5c; 
+  }
+
+  button {
+    border: 3px solid transparent;
+    border-radius: 10px;
     margin: 1px;
     font-size: 15px;
     height: 40px;
@@ -31,21 +47,16 @@
       color: white;
     }
   }
-
 }
 
 @media (max-width: 1550px) {
   .colorButtons_container {
-  
     width: 475px;
-     }
-  
+  }
 }
 @media (max-width: 880px) {
   .colorButtons_container {
-  
     width: 100%;
-    // padding: 80px;
-     }
-  
+  }
 }
+

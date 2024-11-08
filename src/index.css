@@ -8,10 +8,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1c1c1c ;
-  
+
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(28, 28, 28);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #138a5c;
+  border-radius: 20px; 
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #138a5c; 
+}
+  

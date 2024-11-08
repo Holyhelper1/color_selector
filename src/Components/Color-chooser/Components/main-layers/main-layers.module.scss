@@ -15,13 +15,20 @@
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    margin-top: 60px;
+    // margin-top: 60px;
   }
-  
-  p {
-    margin: 0;
-    padding: 0;
-  }
+}
+.double_paint {
+  padding: 10px;
+  background-color: #6dbd8b;
+  color: white;
+  border-radius: 10px;
+  height: 24px;
+  border-radius: 10px;
+  text-align: start;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Cera Pro", sans-serif;
 }
 
 .mainLayers_button_clear {
@@ -50,7 +57,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%; // Лучше использовать относительные единицы
+  width: 100%;
 
   @media (max-width: 1550px) {
     width: 100%;
@@ -73,29 +80,27 @@
   border-radius: 10px;
 
   img {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     border-radius: 20px;
-    
-    
+
     &.base-layer {
-      z-index: 1; 
+      z-index: 1;
     }
 
-   
     &.green-layer {
-      z-index: 0;  
+      z-index: 0;
     }
 
     &.active {
-      z-index: 4; 
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
+      z-index: 4;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
 
     &.new_color {
-      z-index: 5; 
+      z-index: 5;
     }
   }
 }
@@ -111,10 +116,10 @@
   }
 }
 
-  .animate_pulse {
-    z-index: 3; 
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
+.animate_pulse {
+  z-index: 3;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 
 .mainLayers_button_calculate {
   border: none;
@@ -142,20 +147,18 @@
   width: 90%;
   text-align: center;
   margin: 20px 0;
-
-  p {
-    margin: 20px 0;
-    padding: 10px 0;
-  }
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1630px) {
   .mainLayers_wrapper {
     flex-direction: column;
   }
 
   .mainLayers_container {
     width: 90%;
+  }
+  .double_paint {
+    height: 33px;
   }
 }
 

@@ -9,12 +9,10 @@
     background-color: #6dbd8b;
     color: white;
     font-family: "Cera Pro", sans-serif;
-  
-    &:hover {
+      &:hover {
       cursor: pointer;
     }
-  
-    &:active {
+      &:active {
       background-color: rgb(255, 115, 0);
       color: white;
     }
