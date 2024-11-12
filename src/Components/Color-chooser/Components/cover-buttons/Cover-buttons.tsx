@@ -52,7 +52,7 @@ export const CoverButtons = ({
   }, [currentColor, currentColorNum]); // вернуть activeLayer в массив зависимостей и разобраться с обновлением состояния кнопок, остальное работает
 
   const filteredLayers = layers.filter(
-    (layer) => layer.name !== "inside" && layer.name !== "outside"
+    (layer) => layer.name !== "inside" && layer.name !== "outside" && layer.name !== "inside2"
   );
 
   // console.log("обновление строки и должны быть новые значения");
