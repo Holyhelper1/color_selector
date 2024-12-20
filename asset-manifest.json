@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/color_selector/static/css/main.2d9b696c.css",
-    "main.js": "/color_selector/static/js/main.0defef04.js",
+    "main.css": "/color_selector/static/css/main.8cd2def6.css",
+    "main.js": "/color_selector/static/js/main.6456e318.js",
     "static/js/453.2c5084af.chunk.js": "/color_selector/static/js/453.2c5084af.chunk.js",
     "static/media/House-main-layer.jpg": "/color_selector/static/media/House-main-layer.f95268c19d19e8d26653.jpg",
+    "static/media/Walls.png": "/color_selector/static/media/Walls.7b1c6dfe9a40482a626f.png",
+    "static/media/Floor.png": "/color_selector/static/media/Floor.2b1ee8cc44f652d33fae.png",
     "static/media/outside-walls-green.png": "/color_selector/static/media/outside-walls-green.26e216b42aa618108569.png",
     "static/media/balcony-green.png": "/color_selector/static/media/balcony-green.1d40942de6817d741fff.png",
-    "static/media/inside-covering-green-floor.png": "/color_selector/static/media/inside-covering-green-floor.57ee044809c74f5027cd.png",
-    "static/media/inside-covering-green-walls.png": "/color_selector/static/media/inside-covering-green-walls.cbe5b6022a4db77302dc.png",
-    "static/media/Roof-green.png": "/color_selector/static/media/Roof-green.585eca91dc46f5232756.png",
+    "static/media/inside-covering-green-floor.png": "/color_selector/static/media/inside-covering-green-floor.ad0ccc6063d9599ea909.png",
     "static/media/inside.jpg": "/color_selector/static/media/inside.e27a0779a240483e3730.jpg",
+    "static/media/Ceiling.png": "/color_selector/static/media/Ceiling.e35b41527a4adb1ff64d.png",
+    "static/media/inside-covering-green-walls.png": "/color_selector/static/media/inside-covering-green-walls.91b73e86bd4246d8520d.png",
+    "static/media/Roof-green.png": "/color_selector/static/media/Roof-green.585eca91dc46f5232756.png",
     "static/media/Roof-lining-green.png": "/color_selector/static/media/Roof-lining-green.8c91455c33ff6265f0c2.png",
     "static/media/inside-covering-green-ceiling.png": "/color_selector/static/media/inside-covering-green-ceiling.22f0d59f8313929d5838.png",
-    "static/media/inside.jpeg": "/color_selector/static/media/inside.bb547ec3eedff5dd7822.jpeg",
-    "static/media/inside-covering-green-facing.png": "/color_selector/static/media/inside-covering-green-facing.d5e95ea51f7017576874.png",
+    "static/media/Beams.png": "/color_selector/static/media/Beams.489ff18f50c11b7cc3dc.png",
     "index.html": "/color_selector/index.html",
-    "main.2d9b696c.css.map": "/color_selector/static/css/main.2d9b696c.css.map",
-    "main.0defef04.js.map": "/color_selector/static/js/main.0defef04.js.map",
+    "main.8cd2def6.css.map": "/color_selector/static/css/main.8cd2def6.css.map",
+    "main.6456e318.js.map": "/color_selector/static/js/main.6456e318.js.map",
     "453.2c5084af.chunk.js.map": "/color_selector/static/js/453.2c5084af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d9b696c.css",
-    "static/js/main.0defef04.js"
+    "static/css/main.8cd2def6.css",
+    "static/js/main.6456e318.js"
   ]
 }
