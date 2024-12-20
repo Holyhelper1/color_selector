@@ -60,8 +60,8 @@ export const ColorButtons = ({ onColorClick }: ColorButtonsProps) => {
           </button>
         ))}
       </div>
+        <h3>Новинки сезона!</h3>
       <div className={styles.colorButtons_container}>
-        <div className={styles.color_title}>Новинки сезона!</div>
         <div className={styles.hr_line}></div>
         {newColors.map((color4) => (
           <button
