@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #1c1c1c;
-  height: 52px;
+  height: 76px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -79,7 +79,7 @@
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1750px) {
   .coverButtons_container {
     flex-direction: column;
     height: 170px;

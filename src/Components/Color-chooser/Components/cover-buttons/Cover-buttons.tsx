@@ -1,4 +1,3 @@
-// разобраться с обновление информации в кнопках, остальное всё работает
 import { useEffect, useState } from "react";
 import styles from "./cover-buttons.module.scss";
 
@@ -49,16 +48,14 @@ export const CoverButtons = ({
         [activeLayer]: { color: currentColor, colorNum: currentColorNum },
       }));
     }
-  }, [currentColor, currentColorNum]); // вернуть activeLayer в массив зависимостей и разобраться с обновлением состояния кнопок, остальное работает
+  }, [currentColor, currentColorNum]);
 
   const filteredLayers = layers.filter(
-    (layer) => layer.name !== "inside" && layer.name !== "outside" && layer.name !== "inside2"
+    (layer) =>
+      layer.name !== "inside" &&
+      layer.name !== "outside" &&
+      layer.name !== "inside2"
   );
-
-  // console.log("обновление строки и должны быть новые значения");
-  // console.log("CoverButtons: activeLayer", activeLayer);
-  // console.log("CoverButtons: layerColors", layerColors);
-
   return (
     <div className={styles.coverButtons_container}>
       {filteredLayers.map(({ name, buttonName }) => (

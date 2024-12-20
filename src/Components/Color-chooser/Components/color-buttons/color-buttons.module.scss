@@ -27,6 +27,14 @@
   &::-webkit-scrollbar-thumb:hover {
     background: #138a5c; 
   }
+  .hr_line{
+    border-bottom: 1px solid #00b144;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .color_button{
+    width: 100%;
+  }
 
   button {
     border: 3px solid transparent;
@@ -46,6 +54,15 @@
       border: 3px solid #00b144;
       color: white;
     }
+  }
+  
+  .color_title {
+    margin: 10px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: start;
+    align-items: flex-start;
   }
 }
 
