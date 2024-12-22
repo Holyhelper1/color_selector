@@ -11,11 +11,11 @@
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
-    width: 8px; 
+    width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background: rgb(28, 28, 28); 
+    background: rgb(28, 28, 28);
     border-radius: 10px;
   }
 
@@ -25,15 +25,19 @@
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: #138a5c; 
+    background: #138a5c;
   }
-  .hr_line{
+  .hr_line {
     border-bottom: 1px solid #00b144;
     width: 100%;
     margin-bottom: 10px;
   }
-  .color_button{
+  .color_button {
     width: 100%;
+    font-size: 17px;
+  }
+  .color_button:hover {
+    font-weight: bold;
   }
 
   button {
@@ -55,7 +59,7 @@
       color: white;
     }
   }
-  
+
   .color_title {
     margin: 10px;
     width: 100%;
@@ -65,7 +69,6 @@
     align-items: flex-start;
   }
 }
-
 
 @media (max-width: 1550px) {
   .colorButtons_container {
@@ -77,4 +80,3 @@
     width: 100%;
   }
 }
-

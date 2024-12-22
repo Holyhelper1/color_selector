@@ -18,6 +18,21 @@ export const ColorButtons = ({ onColorClick }: ColorButtonsProps) => {
   const handleColorClick = (colorParam: string, colorNum: string) => {
     onColorClick(colorParam, colorNum);
   };
+
+  const newTextColor = (colorParam: string) => {
+    const match = colorParam.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
+
+    if (match) {
+      const l = parseInt(match[3], 10);
+
+      if (l <= 50) {
+        return "white";
+      }
+    }
+
+    return "defaultColor";
+  };
+
   return (
     <>
       <div className={styles.colorButtons_container}>
@@ -60,7 +75,7 @@ export const ColorButtons = ({ onColorClick }: ColorButtonsProps) => {
           </button>
         ))}
       </div>
-        <h3>Новинки сезона!</h3>
+      <h3>Новинки сезона!</h3>
       <div className={styles.colorButtons_container}>
         <div className={styles.hr_line}></div>
         {newColors.map((color4) => (
@@ -68,12 +83,15 @@ export const ColorButtons = ({ onColorClick }: ColorButtonsProps) => {
             className={styles.color_button}
             onClick={() => handleColorClick(color4.hsl, color4.colorNum)}
             key={color4.id}
-            style={{ backgroundColor: color4.hsl }}
+            style={
+              newTextColor(color4.hsl) === "white"
+                ? { backgroundColor: color4.hsl, color: "white" }
+                : { backgroundColor: color4.hsl }
+            }
           >
             {color4.colorNum}
           </button>
         ))}
-
       </div>
     </>
   );
