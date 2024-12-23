@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Массивы цветов в папке Utils
 =======
 
@@ -8,4 +8,3 @@
 
 Web page :
 https://holyhelper1.github.io/color_selector/
->>>>>>> 99830e83a362a62f5c260064bce434ecf3f5e0f8
