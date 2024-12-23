@@ -1,4 +1,3 @@
-// самый стабильный вариант 1.1 новая версия
 type HSL = { h: number; s: number; l: number };
 
 export function parseHsl(hslString: string): HSL {

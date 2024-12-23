@@ -103,7 +103,7 @@ export const MainLayers = ({
             покраски
           </p>
           <p className={styles.double_paint}>
-            Для покраски в 2 слоя нажмите на кнопку "&times;2" и выберите цвет
+            Для покраски в 2 слоя нажмите на кнопку <span className={styles.red_text}>"&times;2" </span> и выберите цвет
           </p>
           <CoverButtons
             onButtonClick={handlerLayerChange}

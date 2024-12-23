@@ -82,7 +82,7 @@ export const CoverButtons = ({
                 border: layerColors[name]?.color ? "1px solid black" : "none",
               }}
             >
-              <div>&times;2</div>
+              <div> <span className={styles.coverButtons_double_red}>&times;2</span></div>
             </div>
             <div
               className={styles.coverButtons_square}
@@ -93,7 +93,9 @@ export const CoverButtons = ({
                   : "",
                 border: layerColors[name]?.color ? "1px solid black" : "none",
               }}
-            ></div>
+            >
+              <div className={styles.coverButtons_color_box}></div>
+            </div>
             <div>
               {layerColors[name]?.colorNum &&
                 (layerColors[name].color !== "none"
